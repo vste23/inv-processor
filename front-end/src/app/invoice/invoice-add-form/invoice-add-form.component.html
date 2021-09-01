@@ -1,0 +1,17 @@
+<div class="form-wrap">
+  <h2>Add new invoices</h2>
+
+  <angular-file-uploader
+        #fileUpload1
+        [config]="afuConfig"
+        (ApiResponse)="DocUpload($event)">
+  </angular-file-uploader>
+
+  <ng-container *ngIf="errors && errors.length > 0">
+    <div class="errors-wrap">
+      <div *ngFor="let error of errors" class="error-item">
+        <span>{{error}}</span>
+      </div>
+    </div>
+  </ng-container>
+</div>
